@@ -1,2 +1,2 @@
 # URLYZER
-Trabalho de Conclusão de Cursp
+Trabalho de Conclusão de Curso
