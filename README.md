@@ -1,26 +1,43 @@
 # URLYZER
-> Description here
+URLYZER is a website that classifies an URL according to the _Random Forest_ classificator and its lexical features. This project was presented as a final paperwork of Bachelor in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil, 2021.
+## Website Folder
+> This folder contains the project about the website.
+### How to run the project
+> Make sure to have <a href="https://www.python.org/">Python</a> installed in your computer (in this project the version used was 3.9.5). After that follow the steps bellow:
 
-<!--+ item
+**1.** Create a folder to this project and put the **_urlyzer_** folder inside it.
 
-Exemplo | Tabela
---------|---------
-texto| texto
--->
-<h2> Website Folder </h2>
-Description
-How to use
-install python, django, virtualenv
-  create virtual env
-  activate
-  install requirements.txt
-  to run the project: python manage.py runserver
-<h2> AI Folder </h2>
-Description
+2. Install the _python virtual environment_ in your computer and create one, after that you can active the virtual environment. You can see more in the [documentation](https://docs.python.org/3/library/venv.html).
 
-<h2> Related Technologies </h2>
-About requirements
-<h2> Screenshots</h2>
-Homepage, benign, malicious
-<h2> Know more </h2>
-Publicated work's URL
+**3.** With the virtual environment **activated** and in the right path of the **urlyzer** folder, install all the requirements used in this project. </h4>
+```
+pip install -r requirements.txt
+```
+**4.** Now you can run the django server with the command:
+```
+python manage.py runserver
+```
+
+## AI Folder 
+> In this folder are the files about the _python_ modules used to build the classificator model, some datasets and the main _jupyter notebook_ about the training, test and results process.
+
+## URLYZER Screenshots
+### Homepage
+
+![image](https://user-images.githubusercontent.com/51066402/123690758-be696d00-d822-11eb-9949-4854946242fd.png)
+
+### Benign URL
+
+![image](https://user-images.githubusercontent.com/51066402/123690992-10aa8e00-d823-11eb-86bc-6b9df6e555ac.png)
+### Malicious URL
+
+![image](https://user-images.githubusercontent.com/51066402/123691155-3fc0ff80-d823-11eb-91b2-3527666f9baa.png)
+
+![image](https://user-images.githubusercontent.com/51066402/123691229-59fadd80-d823-11eb-8020-92612cfb94fa.png)
+
+## Related Technologies
+The technologies used to build the website are in the _requirements.txt_ file. Besides that some of the others are related to the _Random Forest_ model: 
+
+- [Scikit learning](https://scikit-learn.org/stable/)
+- [Nltk](https://www.nltk.org/)
+- [Jupyter](https://jupyter.org/?__cf_chl_managed_tk__=52f5cc98e30b0da14b096418d2fade230790cec2-1624906911-0-AYE26ElB5rNWdYn2xQJP5szz8Ce4koOXIVJjrgaVp3WvHmcLKOsGnhO_tLasUKn_umTcR8AQoybnO26bSR-eO_-ooqEKu6w7Jz9lgpXk4yO7OeaVpWDKKia9RYrZVFubQi85dF131os5SuTZ__4ks6LRNnHbBHYJWQ_yd_U0cCqa1wf0-OAW_tIUDcZLFLIi3DKCMbEcQRZUscxIZXqZ2jYfawoMnByUS0bT95x9oGAGvkrpuxXMg6g-Uh6XAbK94LHJyTbacQPOvbxa9MhJzwK4TqkbZhyCSUYab6JT32oE5tqr6lGrF5d2za-Rl16al17xu9PE_DEpLJTsVbHW7H1eKdhHUY84nMWBEB1kbEH_Glb_Mg4dEx9LBiVf8oadQXckNc6fnh26PC30JGUIKem95gIKIdepNKfZ3M808xDSKmb-Rg0sU1hoC37HCYX28nBngEnAg3viSgdDR-ci1XavSTW5pMbMlab4wxb5Zvit3bOVwpNrScu_wSDemc0ziGNzNcCpND98vOjshzO6Vxh-a2ceMGnJx_6xhDpjDsLevIlr9MBjTbWdHp8Z6HetAPuXH_iN6b0QAKliguAP9u7NoCjDzEe9HzNoNCb5mryLV27V4jKM77YD7BBkAttinQ)
