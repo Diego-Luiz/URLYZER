@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{%block content%}
+<div class="modal fade" id="malignModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72c25" class="bi bi-exclamation-triangle modal-bad" viewBox="0 0 16 16">
+                    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                </svg>
+                <h4 class="modal-title fw-bold ms-2" style="font-size:2.5em;">Aviso</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="" style="text-align: justify;">
+                    Você está prestes a ser redirecionado a uma URL que foi classificada como maliciosa.
+                    URLs maliciosas podem hospedar sites com as mais diversas intenções tais como: enganar
+                    o usuário e roubar dados <span class="fst-italic">(phishing)</span>; espionagem, coleta de dados sigilosos 
+                    <span class="fst-italic">(spyware)</span>; podem conter trojans, vírus, malwares, entre vários outros.
+                </p>
+            </div>
+            
+            <form action="{% url 'redirect' %}" method="post" class="modal-footer" >{% csrf_token %}
+                <h5 class="fw-bold w-100 text-center mb-3">Deseja realmente prosseguir?</h5>
+                <div class="row d-flex w-100 justify-content-center">
+                    <div class="col-6">
+                        <button type="submit" name="InputURL" value="{{Url}}" class="btn c w-100 p-3" style="font-size:1em;">
+                            <span class="text-white">Sim</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn c w-100 p-3" data-bs-dismiss="modal" style="font-size:1em;">
+                            <span class="text-white">Não</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<main class="conteiner-fluid d-flex flex-column h-100 align-items-center justify-content-center main flex-wrap"> 
+    <div class="border border-3 d-flex row flex-wrap justify-content-center align-items-center  my-sm-4  mx-sm-4 mx-xl-5 my-xl-4 vw-75  rounded-end t">
+        <div class="col-11 col-sm-10 py-2">
+            <div class="d-flex justify-content-center align-items-center" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f72c25" class="bi bi-exclamation-triangle bad" viewBox="0 0 16 16">
+                    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                </svg>
+                <h2 class="d-inline-block fw-bold ms-2 t fs-1" >MALICIOSA</h2>
+            </div>
+        </div>
+        <div class="col-11 py-2 d-flex justify-content-center t">
+            <p class="fs-4" style="text-align: justify;"> <span class="fw-bold">URLYZER</span>  classificou a URL como maliciosa.</p>
+        </div>
+        <div class="col-11 col-sm-10 col-md-9 col-lg-5 col-xl-5 col-xxl-4 py-2">
+            <a href="{%url 'home'%}" class="btn py-3 px-3 w-100 c text-white" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square-fill back me-2" viewBox="0 0 16 16">
+                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+                </svg>
+                Voltar
+            </a>
+            
+        </div>
+        <div class="col-11 col-sm-10 col-md-9 col-lg-5 col-xl-5 col-xxl-4 py-2">
+            <button type="button" class="btn py-3 px-3 w-100 c text-white" data-bs-toggle="modal" data-bs-target="#malignModal">
+                Prosseguir
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill next ms-2" viewBox="0 0 16 16">
+                    <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+                </svg>
+            </button>    
+        </div>
+        <div class="col-11 py-2 d-flex justify-content-center align-self-end t" >
+            <p style="text-align: justify;">
+                <span class="fw-bold">Observação: </span> 
+                URLYZER utiliza um modelo de inteligência artificial treinado e testado para classificar as URLs,
+                portanto, sendo um modelo de I.A pode cometer erros. Prosseguir ou não para a URL é total responsabilidade do usuário.
+            </p>
+        </div>
+        
+    </div>
+
+</main>
+
+
+{%endblock%}

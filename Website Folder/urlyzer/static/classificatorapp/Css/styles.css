@@ -1,0 +1,59 @@
+
+.all,html,body{
+    margin:0;
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* tags main with this background color */
+.main{
+    background-color:white;
+}
+.logo{
+    width: 20px;
+    height: 20px;
+}
+/*buttons*/
+.c{ 
+    background-color:#003459;
+}
+/*navbar and footer*/
+.n{ 
+    background-color:#003459 ;
+}
+/*text*/
+.t{ 
+    color:#00171f;
+}
+/* ok icon */
+.ok{
+    color: #32CD32;
+    height: 7rem;
+    width: 7rem;
+}
+/* bad icon */
+.bad{
+    height: 7rem;
+    width: 7rem;
+}
+/* icon inside bad modal */
+.modal-bad{
+    height: 5rem;
+    width: 5rem;
+}
+/* button to the next page */
+.next{
+    height: 2rem;
+    width: 2rem;
+}
+/* button back to previous page */
+.back{
+    height: 2rem;
+    width: 2rem;
+    
+}
+/* footer */
+footer{
+    height:9vh;
+    font-size: 0.9em;
+}
+

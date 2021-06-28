@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{%block content%}
+<main class="conteiner-fluid d-flex flex-column h-100 align-items-center justify-content-center main">
+    <div class=" border border-3 d-flex row flex-wrap justify-content-center align-items-center vw-75  my-sm-4  mx-sm-4 mx-xl-5 my-xl-4 rounded-end f t" >
+        <div class="col-11 py-2">
+            <div class="d-flex justify-content-center align-items-center" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle ok" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                </svg>
+                <h2 class="d-inline-block fw-bold ms-2 fs-1 t">BENIGNA</h2>
+            </div>
+        </div>
+        <div class="col-11 py-2 d-flex justify-content-center t">
+            <p class="" style="font-size: 1.5rem;"> <span class="fw-bold">URLYZER</span>  classificou a URL como benigna.</p>
+        </div>
+        
+        <form action="{% url 'redirect' %}" method="post" class="d-flex justify-content-center flex-wrap"> {% csrf_token %}
+            <div class="col-11 col-sm-10 col-md-9 col-lg-5 col-xl-5 col-xxl-4 py-2 me-sm-0 me-md-0 me-lg-3 me-xl-3 me-xxl-3">
+                <button type="submit" class=" btn py-3 px-4 c text-white w-100" name="InputURL" value="home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square-fill back me-2" viewBox="0 0 16 16">
+                        <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+                    </svg>
+                    Voltar
+                </button>
+            </div>
+            <div class="col-11 col-sm-10 col-md-9 col-lg-5 col-xl-5 col-xxl-4 py-2 ms-sm-0 ms-md-0 ms-lg-2 ms-xl-2 ms-xxl-3">
+                <button type="submit" class=" btn py-3 px-4 c text-white w-100" name="InputURL" value="{{Url}}" >
+                    Prosseguir
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill next ms-2" viewBox="0 0 16 16">
+                        <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+                    </svg>
+                </button>  
+            </div>  
+        </form>
+        
+        <div class="col-11 py-2 d-flex justify-content-center align-self-end t" style="font-size:1rem;">
+            <p style="text-align: justify;">
+                <span class="fw-bold">Observação: </span> 
+                URLYZER utiliza um modelo de inteligência artificial treinado e testado para classificar as URLs,
+                portanto, sendo um modelo de I.A pode cometer erros. Prosseguir ou não para a URL é total responsabilidade do usuário.
+            </p>
+        </div>
+    </div>
+
+</main>
+{%endblock%}
