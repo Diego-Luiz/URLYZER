@@ -1,15 +1,15 @@
 # URLYZER
-URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as a final paperwork of Bachelor in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil, 2021.
-## Website Folder
+URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as a final paperwork of Bachelor in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil 🇧🇷, 2021.
+## Website Folder 📁
 > This folder contains the project about the website.
 ### How to run the project
-> Make sure to have <a href="https://www.python.org/">Python</a> installed in your computer (in this project the version used was 3.9.5). After that follow the steps bellow:
+> Make sure to have [Python](https://www.python.org/) installed in your computer (in this project the version used was 3.9.5). After that follow the steps below:
 
 **1.** Create a folder to this project and put the **_urlyzer_** folder inside it.
 
-2. Install the _python virtual environment_ in your computer and create one, after that you can active the virtual environment. You can see more in the [documentation](https://docs.python.org/3/library/venv.html).
+2. Install the _python virtual environment_ in your computer and create one, after that you can active the virtual environment. You can see more in the [here](https://docs.python.org/3/library/venv.html).
 
-**3.** With the virtual environment **activated** and in the right path of the **urlyzer** folder, install all the requirements used in this project. </h4>
+**3.** With the virtual environment **activated** and in the right path of the **_urlyzer_** folder, install all the requirements used in this project. </h4>
 ```
 pip install -r requirements.txt
 ```
@@ -18,18 +18,18 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-## AI Folder 
+## AI Folder 📁
 > In this folder are the files about the _python_ modules used to build the classificator model, some datasets and the main _jupyter notebook_ about the training, test and results process.
 
-## URLYZER Screenshots
+## URLYZER Screenshots 📷
 ### Homepage
 
 ![image](https://user-images.githubusercontent.com/51066402/123690758-be696d00-d822-11eb-9949-4854946242fd.png)
 
-### Benign URL
+### Benign URL ✔️
 
 ![image](https://user-images.githubusercontent.com/51066402/123690992-10aa8e00-d823-11eb-86bc-6b9df6e555ac.png)
-### Malicious URL
+### Malicious URL ❌
 
 ![image](https://user-images.githubusercontent.com/51066402/123691155-3fc0ff80-d823-11eb-91b2-3527666f9baa.png)
 
