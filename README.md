@@ -1,5 +1,5 @@
 # URLYZER
-URLYZER is a website that classifies an URL according to the _Random Forest_ classificator and its lexical features. This project was presented as a final paperwork of Bachelor in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil, 2021.
+URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as a final paperwork of Bachelor in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil, 2021.
 ## Website Folder
 > This folder contains the project about the website.
 ### How to run the project
