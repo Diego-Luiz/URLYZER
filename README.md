@@ -1,5 +1,5 @@
 # URLYZER
-URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as a final paperwork of Bachelor in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil 🇧🇷, 2021.
+URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as a final paper in Bachelor's degree in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil 🇧🇷, 2021.
 ## Website Folder 📁
 > This folder contains the project about the website.
 ### How to run the project
@@ -13,10 +13,23 @@ URLYZER is a website that classifies an URL as benign or malicious, according to
 ```
 pip install -r requirements.txt
 ```
-**4.** Now you can run the django server with the command:
+**4.** Modify the _settings.py_ inside _urlyzer_ folder putting the host(s) you want to run the server.
+In the line **28** (you can edit this parameter putting the allowed host(s) to run the project):
 ```
-python manage.py runserver
+ALLOWED_HOSTS=['127.0.0.1']
 ```
+
+**5.** Now you can run the django server with the command:
+```
+python manage.py runserver --insecure
+```
+The parameter ```--insecure``` is needed because the parameter ```DEBUG``` is setted as```False```.
+
+### How URLYZER works
+According to the URL string put in the _home page_ the site analyzes it and classifies as benign or malicious, putting a web page according to the classification. In the respective page you can come back to the start or go ahead and access the website according to the input URL.
+
+#### Observation
+If your choice was to access the website represented by the URL, URLYZER will try to access a website with that **exactly URL string given**.
 
 ## AI Folder 📁
 > In this folder are the files about the _python_ modules used to build the classificator model, some datasets and the main _jupyter notebook_ about the training, test and results process.
