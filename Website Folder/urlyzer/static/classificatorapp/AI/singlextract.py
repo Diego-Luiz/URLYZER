@@ -3,7 +3,7 @@ import os
 import tldextract
 from . import ngramExtract
 '''
-    => Forma de representação da URL (dicionario com os atributos)
+    => How the URL is being represented
 '''
 URL= ['T_U', 'Q_L_U', 'Q_N_U', 'Q_T_U', 'Q_CHARNALPHA', 'T_MT_U', 'T_DOM', 
     'C_IP', 'T_TL', 'T_SL', 'T_MT_DOM', 'Q_V', 'DOM_TK_1', 'DOM_TK_2', 'DOM_TK_3', 'DOM_TK_4', 
@@ -18,14 +18,15 @@ URL= ['T_U', 'Q_L_U', 'Q_N_U', 'Q_T_U', 'Q_CHARNALPHA', 'T_MT_U', 'T_DOM',
     'URLBigram', 'URLTrigram', 'URLFourgram', 'HostUnigram', 'HostBigram', 'HostTrigram', 'HostFourgram', 'PathUnigram', 'PathBigram', 
     'PathTrigram', 'PathFourgram'
 ]
-
+#Vowels
 Vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+#Extensions
 Extensoes = ['EXE','ZIP','PHP','R','DLL']
 '''
-    => Função responsável por extrair as características referente aos tokens de uma determinada string.
-    prefixo: corresponde a qual parte da URL serão preenchidas as características de tokens (Domínio, diretório, arquivo, parâmetros)
-    dicionario: qual URL na lista está sendo modificada (extraindo as características de token)
-    string: string corresponde a qual parte da URL (Domínio, diretório, arquivo, parâmetros)
+Function responsible for extracting the characteristics about the tokens given a determinated string.
+    -prefixo: The character prefix in the URL's dictionary (DOM, DIR, A, P), related to the string (what part of it)
+    -dicionario: Corresponding to the URL's python dictionary
+    -string: The URL part sent to be tokenized (Domain, directory, archive, parameters)
 '''
 def tokens(prefixo, dicionario, string):
     posicao = prefixo + '_'
@@ -47,7 +48,10 @@ def tokens(prefixo, dicionario, string):
     dicionario[posicao+'TK_16'] = string.count(',')
     dicionario[posicao+'TK_17'] = string.count('$')
 
-
+'''
+Function responsible for extracting most of the URL's lexical features given the URL string
+    -URL: the string representing a URL
+'''
 def execute(Url):
     Probabilidades = ngramExtract.readProbabilities()
     URL_ = {x:0 for x in URL}

@@ -26,5 +26,8 @@ def redirect(request):
 def github(request):
     return HttpResponseRedirect("https://github.com/Diego-Luiz")
 
+def githubproject(request):
+    return HttpResponseRedirect("https://github.com/Diego-Luiz/URLYZER")
+
 def linkedin(request):
     return HttpResponseRedirect("https://www.linkedin.com/in/diego-luiz-n-gon%C3%A7alves-5a1584191/")

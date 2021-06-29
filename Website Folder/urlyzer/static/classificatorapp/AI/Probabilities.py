@@ -1,4 +1,7 @@
 import os
+'''
+Function to create a dictionary representing the Probabilidades.txt file
+'''
 def read():
     pasta = os.path.dirname(os.path.abspath(__file__))
     nome_arquivo = os.path.join(pasta, "Probabilidades.txt")
@@ -14,7 +17,9 @@ def read():
     arquivo.close()
     return dictio
     
-#p/gravar Dictionary
+'''
+Function to create the Probabilidades.txt file according to a given dictionary
+'''
 def write(Dictionary):
     arquivo = open('Modules/Probabilidades.txt',"w",encoding='Latin1')
     for i,j in Dictionary.items():

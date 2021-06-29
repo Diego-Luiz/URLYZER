@@ -2,11 +2,11 @@ from urllib.parse import urlparse
 import os
 import csv
 import nltk
-# Modulo para ler/escrever o dicionario de probabilidades em arquivo de texto
+
 from . import Probabilities
-#import Probabilities
+
 '''
-Função para criar o dicionário de probabilidades, relação 'chave':probabilidade de acordo com o dataset benigno
+Function to get the Probabilities file
 '''
 def getProbabilities(Arq):
     Probabilidades = {}
@@ -38,11 +38,15 @@ def getProbabilities(Arq):
         else:  # se for bigram,trigram,fourgram
             Probabilidades[key] = freqs[key] / freqs[key[:len(key)-1]]
     Probabilities.write(Probabilidades)
-
+'''
+Function to return the probabilities read (according to the Probabilidades.txt file) in a python dictionary format
+'''
 def readProbabilities():
     return Probabilities.read()
 '''
-Função para extrair as características de N-Gramas referente a uma URL
+Function to extract the N-grams features
+    -Url: the given URL string
+    -Probabilidades: the Probabilities in a python's dictionary format
 '''
 def extractFeatures(Url,Probabilidades):
     url_parse = urlparse(Url)
@@ -212,39 +216,5 @@ def extractFeatures(Url,Probabilidades):
         if len(lista3) > 0:
             SimFields['T_MT_P'] = max(lista3.values())
         #================================
-    #     unigramList = list(map(''.join, nltk.ngrams(url_parse.params, 1)))
-    #     bigramList = list(map(''.join, nltk.ngrams(url_parse.params, 2)))
-    #     trigramList = list(map(''.join, nltk.ngrams(url_parse.params, 3)))
-    #     fourgramList = list(map(''.join, nltk.ngrams(url_parse.params, 4)))
-    #     # Dicionários
-    #     unigramDict = {x: 0 for x in unigramList}
-    #     bigramDict = {x: 0 for x in bigramList}
-    #     trigramDict = {x: 0 for x in trigramList}
-    #     fourgramDict = {x: 0 for x in fourgramList}
-
-    #     # Similaridade unigram
-    #     if len(unigramDict) > 0:
-    #         for i in unigramDict.keys():
-    #             if i in Probabilidades:
-    #                 SimFields['ParamsUnigram'] = SimFields['ParamsUnigram'] + Probabilidades[i]
-    #         SimFields['ParamsUnigram'] = SimFields['ParamsUnigram'] / len(unigramDict)
-    #     # Similaridade biggram
-    #     if len(bigramDict) > 0:
-    #         for i in bigramDict.keys():
-    #             if i in Probabilidades:
-    #                 SimFields['ParamsBigram'] = SimFields['ParamsBigram'] + Probabilidades[i]
-    #         SimFields['ParamsBigram'] = SimFields['ParamsBigram'] / len(bigramDict)
-    #     # Similaridade trigram
-    #     if len(trigramDict) > 0:
-    #         for i in trigramDict.keys():
-    #             if i in Probabilidades:
-    #                 SimFields['ParamsTrigram'] = SimFields['ParamsTrigram'] + Probabilidades[i]
-    #         SimFields['ParamsTrigram'] = SimFields['ParamsTrigram'] / len(trigramDict)
-    #     # Similaridade fourgram
-    #     if len(fourgramDict) > 0:
-    #         for i in fourgramDict.keys():
-    #             if i in Probabilidades:
-    #                 SimFields['ParamsFourgram'] = SimFields['ParamsFourgram'] + Probabilidades[i]
-    #         SimFields['ParamsFourgram'] = SimFields['ParamsFourgram'] / len(fourgramDict)
 
     return SimFields

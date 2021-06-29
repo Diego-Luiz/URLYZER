@@ -1,3 +1,7 @@
+'''
+Function responsible for formating the URL without its Internet Protocol
+-Url: the URL string  
+'''
 def execute(Url):
     protocolos = ['HTTP','HTTPS','FTP','http','https','ftp']
     URL = Url
