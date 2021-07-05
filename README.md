@@ -56,7 +56,7 @@ The folder containing the final classificator model used in the project.
 ![image](https://user-images.githubusercontent.com/51066402/123691229-59fadd80-d823-11eb-8020-92612cfb94fa.png)
 
 ## Related Technologies
-The technologies used to build the website are in the _requirements.txt_ file. Besides that some of the others are related:
+The technologies used to build the website are in the _requirements.txt_ file. Besides that some others are related:
 
 - [Scikit learning](https://scikit-learn.org/stable/)
 - [Nltk](https://www.nltk.org/)
