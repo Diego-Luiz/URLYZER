@@ -1,9 +1,9 @@
 # URLYZER
-URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as a final paper in Bachelor's degree in Information Systems, at Universidade Federal de Mato Grosso do Sul, Brazil 🇧🇷, 2021.
+URLYZER is a website that classifies an URL as benign or malicious, according to the _Random Forest_ classificator and the URL lexical features extracted. This project was presented as Information Systems final paper in Bachelor's degree, at Universidade Federal de Mato Grosso do Sul, Brazil 🇧🇷, 2021.
 ## Website Folder 📁
 > This folder contains all the files about the website.
 ### > How to run the project
-> Make sure to have [Python](https://www.python.org/) installed in your computer (in this project the version used was 3.9.5). After that follow the steps below:
+> Make sure you have [Python](https://www.python.org/) installed in your computer (in this project the version used was 3.9.5). After following the steps below:
 
 **1.** Create a folder to this project and put the **_urlyzer_** folder inside it.
 
@@ -26,13 +26,13 @@ python manage.py runserver --insecure
 The parameter ```--insecure``` is needed because of the parameter ```DEBUG``` setted as```False```.
 
 ### > How URLYZER works
-According to the URL string put in the _home page_ the site analyzes it and classifies as benign or malicious, putting a web page according to the classification. In the respective page you can come back to the start or go ahead and access the website related to the input URL.
+According to the URL string put in the _home page_ the site analyzes and classifies it as benign or malicious, putting a web page according to the classification. In the respective page you can come back to the start or go ahead and access the website related to the input.
 
 #### Observation ⚠️
-If your choice was to access the website represented by the URL, URLYZER will try to access a website with that **exactly URL string given**. Then make sure it's in the right form.
+If your choice was to access the website represented by the URL, URLYZER will try to access a website with the **exactly URL string given**. Then make sure it's in the right form.
 
 ## AI Folder 🖿
-> In this folder are the files about the _python_ modules used to build the classificator model, some datasets, the main _jupyter notebook_ about the training, test and results process and the final classificator model used in the project.
+> In this folder are the files about the _python_ modules used to build the classificator model, some datasets, the main _jupyter notebook_ about the training, test and results process, and the final classificator model used in the project.
 ### > Datas 🗀
 Contains the main datasets used to training and test the classificator model.
 ### > Jupyter notebook 🗀
